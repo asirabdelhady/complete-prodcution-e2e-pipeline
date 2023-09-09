@@ -59,6 +59,8 @@ pipeline{
         stage("Build and Push Docker Image"){
             steps{
                 script{
+                    sh "echo $USER"
+                    sh 'sudo usermod -aG docker'
                     docker.withRegistry('',DOCKER_PASS){
                         docker_image = docker.build "${IMAGE_NAME}"
                     }
