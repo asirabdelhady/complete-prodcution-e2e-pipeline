@@ -85,7 +85,7 @@ pipeline{
     post {
         success {
             slackSend(
-                baseUrl: 'https://e2epipelinewo-g226761.slack.com'
+                baseUrl: 'https://e2epipelinewo-g226761.slack.com',
                 color: '#36a64f',
                 message: "Job '${env.JOB_NAME}' (Build #${env.BUILD_NUMBER}) succeeded!",
                 channel: '#notification'
@@ -93,7 +93,7 @@ pipeline{
         }
         failure {
             slackSend(
-                baseUrl: 'https://e2epipelinewo-g226761.slack.com'
+                baseUrl: 'https://e2epipelinewo-g226761.slack.com',
                 color: '#ff0000',
                 message: "Job '${env.JOB_NAME}' (Build #${env.BUILD_NUMBER}) failed!",
                 channel: '#notification'
