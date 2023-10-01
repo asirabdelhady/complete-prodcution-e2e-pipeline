@@ -87,14 +87,14 @@ pipeline{
             slackSend(
                 color: '#36a64f',
                 message: "Job '${env.JOB_NAME}' (Build #${env.BUILD_NUMBER}) succeeded!",
-                channel: '#notification'
+                channel: '#notifications'
             )
         }
         failure {
             slackSend(
                 color: '#ff0000',
                 message: "Job '${env.JOB_NAME}' (Build #${env.BUILD_NUMBER}) failed!",
-                channel: '#notification'
+                channel: '#notifications'
             )
         }
     }
